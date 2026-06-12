@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dc-drip"
+  },
+  "targets": {
+    "dc-drip": {
+      "hosting": {
+        "dc-drip": [
+          "dc-drip"
+        ]
+      }
+    }
+  }
+}

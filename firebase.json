@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "dc-drip",
     "public": "dist/client",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
