@@ -29,7 +29,7 @@ export const Route = createFileRoute("/stats")({
   component: StatsPage,
 });
 
-function StatsPage() {
+export function StatsPage() {
   const [user, setUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [signInError, setSignInError] = useState<string | null>(null);
