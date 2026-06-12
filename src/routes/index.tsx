@@ -6,6 +6,7 @@ import dripDetail from "@/assets/drip-detail.jpg";
 import clientGlow from "@/assets/client-glow.jpg";
 import nursePrep from "@/assets/nurse-prep.jpg";
 import membershipBg from "@/assets/membership-bg.jpg";
+import ownerContact from "@/assets/owner-contact.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -599,7 +600,7 @@ function Home() {
       {/* CTA */}
       <section className="py-24 md:py-32 px-6">
         <div className="max-w-6xl mx-auto relative rounded-[2.5rem] overflow-hidden">
-          <img src={nursePrep} alt="DC Drip nurse preparing IV therapy" loading="lazy" width={1280} height={1280} className="absolute inset-0 w-full h-full object-cover" />
+          <img src={ownerContact} alt="DC Drip owner ready to help clients book IV therapy and wellness services" loading="lazy" width={414} height={670} className="absolute inset-0 w-full h-full object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40" />
           <div className="relative p-6 sm:p-10 md:p-20 max-w-2xl">
             <h2 className="font-display text-[1.9rem] sm:text-5xl md:text-6xl font-light leading-[1.14] sm:leading-[1.05] tracking-normal">
