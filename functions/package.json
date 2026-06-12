@@ -1,0 +1,9 @@
+{
+  "name": "functions",
+  "type": "module",
+  "main": "index.mjs",
+  "engines": { "node": "20" },
+  "dependencies": {
+    "firebase-functions": "^5.0.0"
+  }
+}

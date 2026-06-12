@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Social click tracking
+    match /social_clicks/{doc} {
+      // Anyone (anonymous visitors) can record a click
+      allow create: if
+        request.resource.data.platform is string &&
+        request.resource.data.platform.size() < 64 &&
+        request.resource.data.url is string &&
+        request.resource.data.url.size() < 2048;
+
+      // Only the admin can read stats
+      allow read: if request.auth != null
+        && request.auth.token.email == "helenhaile05@gmail.com"
+        && request.auth.token.email_verified == true;
+
+      // Nobody can update or delete
+      allow update, delete: if false;
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

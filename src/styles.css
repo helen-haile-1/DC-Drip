@@ -1,0 +1,151 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-aqua: var(--aqua);
+  --color-coral: var(--coral);
+  --color-deep: var(--deep);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Fraunces", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+  /* Aqua Vitality — clinical teal + warm champagne, high-contrast type */
+  --background: oklch(0.98 0.015 200);
+  --foreground: oklch(0.22 0.06 200);
+  --card: oklch(0.95 0.025 200);
+  --card-foreground: oklch(0.22 0.06 200);
+  --popover: oklch(0.95 0.025 200);
+  --popover-foreground: oklch(0.22 0.06 200);
+  --primary: oklch(0.55 0.13 200);
+  --primary-foreground: oklch(0.99 0.005 90);
+  --secondary: oklch(0.92 0.04 200);
+  --secondary-foreground: oklch(0.22 0.06 200);
+  --muted: oklch(0.90 0.03 200);
+  --muted-foreground: oklch(0.38 0.05 200);
+  --accent: oklch(0.78 0.10 75);
+  --accent-foreground: oklch(0.22 0.06 200);
+
+  /* Brand tokens */
+  --aqua: oklch(0.62 0.13 205);          /* clear medical teal */
+  --deep: oklch(0.32 0.07 205);          /* deep teal for ink */
+  --gold: oklch(0.78 0.10 78);           /* soft champagne gold */
+  --amber: oklch(0.72 0.14 65);          /* warm amber */
+  --olive: oklch(0.62 0.09 100);         /* muted golden olive */
+  --coral: oklch(0.70 0.18 40);          /* warm coral accent */
+
+  --destructive: oklch(0.55 0.24 27);
+  --destructive-foreground: oklch(0.99 0.005 90);
+  --border: oklch(0.32 0.07 205 / 14%);
+  --input: oklch(0.32 0.07 205 / 14%);
+  --ring: oklch(0.55 0.13 200);
+
+  /* Gradients reserved for CTAs, icons, decorative glows */
+  --gradient-hero: linear-gradient(135deg, oklch(0.40 0.10 210) 0%, oklch(0.58 0.13 200) 45%, oklch(0.78 0.11 70) 100%);
+  --gradient-cta: linear-gradient(135deg, oklch(0.48 0.13 205), oklch(0.74 0.12 70));
+  --gradient-aurora: radial-gradient(ellipse at 20% 10%, oklch(0.62 0.13 205 / 0.28), transparent 60%),
+                     radial-gradient(ellipse at 80% 80%, oklch(0.72 0.14 65 / 0.22), transparent 60%),
+                     radial-gradient(ellipse at 50% 100%, oklch(0.78 0.10 78 / 0.20), transparent 60%);
+  /* Headlines: solid deep teal accent (no rainbow) */
+  --gradient-text: linear-gradient(135deg, oklch(0.32 0.07 205), oklch(0.32 0.07 205));
+  --shadow-glow: 0 30px 80px -20px oklch(0.55 0.13 200 / 0.30);
+  --shadow-gold: 0 20px 60px -15px oklch(0.78 0.10 78 / 0.35);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; color: var(--deep); }
+}
+
+/* Italic emphasis inside headings — warm amber pop, no gradient */
+@utility text-accent-warm {
+  color: var(--amber);
+}
+
+@utility text-gradient {
+  /* Now a solid deep-teal ink for high contrast — gradients are reserved for CTAs */
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-aurora {
+  background: var(--gradient-aurora);
+}
+
+@utility bg-hero-gradient {
+  background: var(--gradient-hero);
+}
+
+@utility bg-cta-gradient {
+  background: var(--gradient-cta);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes drip {
+  0% { transform: translateY(-10px); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.55 0.13 200 / 0.5); }
+  50% { box-shadow: 0 0 0 24px oklch(0.55 0.13 200 / 0); }
+}
+
+@utility animate-float { animation: float 6s ease-in-out infinite; }
+@utility animate-drip { animation: drip 2.4s ease-in infinite; }
+@utility animate-marquee { animation: marquee 30s linear infinite; }
+@utility animate-pulse-glow { animation: pulse-glow 2.5s ease-out infinite; }

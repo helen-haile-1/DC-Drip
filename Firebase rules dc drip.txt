@@ -1,0 +1,18 @@
+{
+  "hosting": {
+    "public": "dist/client",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "**",
+        "function": {
+          "functionId": "ssr",
+          "region": "us-central1"
+        }
+      }
+    ],
+    "headers": [...]
+  },
+  "functions": [...]
+}

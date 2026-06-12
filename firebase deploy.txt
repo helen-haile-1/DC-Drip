@@ -1,0 +1,7 @@
+firebase login
+bun install
+bun run build
+rm -rf functions/server && cp -r dist/server functions/server
+cd functions && npm install && cd ..
+firebase deploy
+
