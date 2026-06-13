@@ -41,28 +41,28 @@
 :root {
   --radius: 1rem;
   /* Aqua Vitality — clinical teal + warm champagne, high-contrast type */
-  --background: oklch(0.98 0.015 200);
-  --foreground: oklch(0.22 0.06 200);
-  --card: oklch(0.95 0.025 200);
+  --background: oklch(0.99 0.006 205);
+  --foreground: oklch(0.22 0.055 225);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.06 200);
   --popover: oklch(0.95 0.025 200);
   --popover-foreground: oklch(0.22 0.06 200);
-  --primary: oklch(0.55 0.13 200);
+  --primary: oklch(0.58 0.15 210);
   --primary-foreground: oklch(0.99 0.005 90);
-  --secondary: oklch(0.92 0.04 200);
+  --secondary: oklch(0.95 0.035 205);
   --secondary-foreground: oklch(0.22 0.06 200);
   --muted: oklch(0.90 0.03 200);
   --muted-foreground: oklch(0.38 0.05 200);
-  --accent: oklch(0.78 0.10 75);
+  --accent: oklch(0.73 0.18 45);
   --accent-foreground: oklch(0.22 0.06 200);
 
   /* Brand tokens */
-  --aqua: oklch(0.62 0.13 205);          /* clear medical teal */
-  --deep: oklch(0.32 0.07 205);          /* deep teal for ink */
+  --aqua: oklch(0.62 0.15 205);          /* ocean medical blue */
+  --deep: oklch(0.30 0.08 225);          /* deep navy for ink */
   --gold: oklch(0.78 0.10 78);           /* soft champagne gold */
   --amber: oklch(0.72 0.14 65);          /* warm amber */
   --olive: oklch(0.62 0.09 100);         /* muted golden olive */
-  --coral: oklch(0.70 0.18 40);          /* warm coral accent */
+  --coral: oklch(0.70 0.20 38);          /* vibrant orange accent */
 
   --destructive: oklch(0.55 0.24 27);
   --destructive-foreground: oklch(0.99 0.005 90);
@@ -71,15 +71,15 @@
   --ring: oklch(0.55 0.13 200);
 
   /* Gradients reserved for CTAs, icons, decorative glows */
-  --gradient-hero: linear-gradient(135deg, oklch(0.40 0.10 210) 0%, oklch(0.58 0.13 200) 45%, oklch(0.78 0.11 70) 100%);
-  --gradient-cta: linear-gradient(135deg, oklch(0.48 0.13 205), oklch(0.74 0.12 70));
+  --gradient-hero: linear-gradient(135deg, oklch(0.50 0.16 214) 0%, oklch(0.64 0.15 200) 52%, oklch(0.72 0.20 40) 100%);
+  --gradient-cta: linear-gradient(135deg, oklch(0.60 0.16 205), oklch(0.70 0.20 38));
   --gradient-aurora: radial-gradient(ellipse at 20% 10%, oklch(0.62 0.13 205 / 0.28), transparent 60%),
                      radial-gradient(ellipse at 80% 80%, oklch(0.72 0.14 65 / 0.22), transparent 60%),
                      radial-gradient(ellipse at 50% 100%, oklch(0.78 0.10 78 / 0.20), transparent 60%);
   /* Headlines: solid deep teal accent (no rainbow) */
   --gradient-text: linear-gradient(135deg, oklch(0.32 0.07 205), oklch(0.32 0.07 205));
-  --shadow-glow: 0 30px 80px -20px oklch(0.55 0.13 200 / 0.30);
-  --shadow-gold: 0 20px 60px -15px oklch(0.78 0.10 78 / 0.35);
+  --shadow-glow: 0 24px 70px -24px oklch(0.58 0.15 210 / 0.35);
+  --shadow-gold: 0 20px 55px -20px oklch(0.70 0.20 38 / 0.36);
 }
 
 @layer base {
