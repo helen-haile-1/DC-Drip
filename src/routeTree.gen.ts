@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdminHtmlNestedRouteImport } from './routes/admin/html'
 import { Route as AdminHtmlRouteImport } from './routes/admin.html'
 import { Route as StatsRouteImport } from './routes/stats'
 import { Route as IndexRouteImport } from './routes/index'
 
+const AdminHtmlNestedRoute = AdminHtmlNestedRouteImport.update({
+  id: '/admin/html',
+  path: '/admin/html',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminHtmlRoute = AdminHtmlRouteImport.update({
   id: '/admin.html',
   path: '/admin.html',
@@ -31,36 +37,47 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin.html' | '/stats'
+  fullPaths: '/' | '/admin/html' | '/admin.html' | '/stats'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin.html' | '/stats'
-  id: '__root__' | '/' | '/admin.html' | '/stats'
+  to: '/' | '/admin/html' | '/admin.html' | '/stats'
+  id: '__root__' | '/' | '/admin/html' | '/admin.html' | '/stats'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminHtmlNestedRoute: typeof AdminHtmlNestedRoute
   AdminHtmlRoute: typeof AdminHtmlRoute
   StatsRoute: typeof StatsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/admin/html': {
+      id: '/admin/html'
+      path: '/admin/html'
+      fullPath: '/admin/html'
+      preLoaderRoute: typeof AdminHtmlNestedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin.html': {
       id: '/admin.html'
       path: '/admin.html'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminHtmlNestedRoute: AdminHtmlNestedRoute,
   AdminHtmlRoute: AdminHtmlRoute,
   StatsRoute: StatsRoute,
 }

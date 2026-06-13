@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /admin/html
 Disallow: /stats
 
 Sitemap: https://dc-drip.app/sitemap.xml

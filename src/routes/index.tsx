@@ -497,7 +497,7 @@ function Home() {
               </a>
             ))}
             <a
-              href="/admin.html"
+              href="/admin/html"
               className="rounded-full border border-border px-4 py-2 text-sm font-black text-muted-foreground hover:bg-secondary"
             >
               Admin
