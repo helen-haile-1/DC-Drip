@@ -4,4 +4,4 @@ Disallow: /admin.html
 Disallow: /admin/html
 Disallow: /stats
 
-Sitemap: https://dc-drip.app/sitemap.xml
+Sitemap: https://www.dc-drip.com/sitemap.xml
