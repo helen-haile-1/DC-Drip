@@ -191,7 +191,7 @@ export function Home() {
 
 function HomeView() {
   return (
-    <section id="top" className="overflow-hidden bg-white px-4 py-10 sm:px-6 md:py-16">
+    <section id="top" className="scroll-mt-28 overflow-hidden bg-white px-4 py-10 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1fr]">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center md:items-start md:text-left">
           <span className="w-fit rounded-full border border-aqua/25 bg-aqua/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-aqua">
@@ -255,7 +255,7 @@ function HomeView() {
 
 function AboutView() {
   return (
-    <section className="px-4 py-10 sm:px-6 md:py-16">
+    <section id="about" className="scroll-mt-28 px-4 py-10 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
         <img src={clientGlow} alt="Client relaxing during IV therapy" className="h-[24rem] w-full rounded-3xl object-cover shadow-glow" />
         <div>
@@ -277,7 +277,7 @@ function AboutView() {
 
 function ServicesView() {
   return (
-    <section className="px-4 py-10 sm:px-6 md:py-16">
+    <section id="services" className="scroll-mt-28 px-4 py-10 sm:px-6 md:py-16">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">The Drip Menu</p>
         <h2 className="mt-4 font-display text-5xl font-light text-deep">
@@ -299,7 +299,7 @@ function ServicesView() {
 
 function MembershipView() {
   return (
-    <section className="px-4 py-10 sm:px-6 md:py-16">
+    <section id="membership" className="scroll-mt-28 px-4 py-10 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-border bg-deep text-white shadow-glow md:grid-cols-2">
         <img src={dripDetail} alt="IV drip detail" className="h-[24rem] w-full object-cover md:h-full" />
         <div className="p-8 md:p-12">
@@ -321,7 +321,7 @@ function MembershipView() {
 
 function StoriesView() {
   return (
-    <section id="stories" className="bg-white px-4 py-12 sm:px-6 md:py-18">
+    <section id="stories" className="scroll-mt-28 bg-white px-4 py-12 sm:px-6 md:py-18">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
@@ -384,7 +384,7 @@ function StoriesView() {
 
 function ContactView() {
   return (
-    <section className="px-4 py-10 pb-28 sm:px-6 md:py-16">
+    <section id="contact" className="scroll-mt-28 px-4 py-10 pb-28 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
         <img src={ownerContact} alt="DC Drip owner" className="h-[30rem] w-full rounded-3xl object-cover object-center shadow-glow" />
         <div>
