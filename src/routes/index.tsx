@@ -118,7 +118,7 @@ function trackEvent(category: string, label: string, url?: string) {
   } catch {}
 }
 
-function Home() {
+export function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [formSent, setFormSent] = useState(false);

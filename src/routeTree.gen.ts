@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AdminHtmlNestedRouteImport } from './routes/admin/html'
 import { Route as AdminHtmlRouteImport } from './routes/admin.html'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as StatsRouteImport } from './routes/stats'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const AdminHtmlNestedRoute = AdminHtmlNestedRouteImport.update({
 const AdminHtmlRoute = AdminHtmlRouteImport.update({
   id: '/admin.html',
   path: '/admin.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StatsRoute = StatsRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
+  '/app': typeof AppRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
+  '/app': typeof AppRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin/html': typeof AdminHtmlNestedRoute
   '/admin.html': typeof AdminHtmlRoute
+  '/app': typeof AppRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin/html' | '/admin.html' | '/stats'
+  fullPaths: '/' | '/admin/html' | '/admin.html' | '/app' | '/stats'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin/html' | '/admin.html' | '/stats'
-  id: '__root__' | '/' | '/admin/html' | '/admin.html' | '/stats'
+  to: '/' | '/admin/html' | '/admin.html' | '/app' | '/stats'
+  id: '__root__' | '/' | '/admin/html' | '/admin.html' | '/app' | '/stats'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminHtmlNestedRoute: typeof AdminHtmlNestedRoute
   AdminHtmlRoute: typeof AdminHtmlRoute
+  AppRoute: typeof AppRoute
   StatsRoute: typeof StatsRoute
 }
 
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/admin.html'
       fullPath: '/admin.html'
       preLoaderRoute: typeof AdminHtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/stats': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminHtmlNestedRoute: AdminHtmlNestedRoute,
   AdminHtmlRoute: AdminHtmlRoute,
+  AppRoute: AppRoute,
   StatsRoute: StatsRoute,
 }
 export const routeTree = rootRouteImport

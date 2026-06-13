@@ -7,6 +7,7 @@ import { getRouter } from "./router";
 
 if (
   window.location.hostname === "dc-drip.com" &&
+  !window.location.pathname.startsWith("/app") &&
   !window.location.pathname.startsWith("/admin") &&
   !window.location.pathname.startsWith("/stats")
 ) {
