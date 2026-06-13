@@ -19,6 +19,7 @@ const chOne = { url: "/videos/ch_one.mp4" };
 const chTwo = { url: "/videos/ch_two.mp4" };
 const chThree = { url: "/videos/ch_three.mp4" };
 const heroBackgroundVideo = "/videos/iv-drip-hero.mp4";
+const nurseCareVideo = "/videos/nurse-care.mp4";
 
 
 export const Route = createFileRoute("/")({
@@ -264,6 +265,33 @@ function Home() {
               <span className="font-medium">{b.label}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-border bg-card shadow-glow md:grid-cols-[1.1fr_0.9fr]">
+          <video
+            className="h-[22rem] w-full object-cover md:h-full"
+            src={nurseCareVideo}
+            poster={nursePrep}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          <div className="flex flex-col justify-center p-8 md:p-12">
+            <div className="text-xs uppercase tracking-[0.3em] text-aqua font-semibold">
+              Medically supervised
+            </div>
+            <h2 className="mt-4 font-display text-3xl md:text-5xl font-light leading-tight">
+              Board-certified care, calm from start to finish.
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Every treatment is reviewed by our medical team and administered
+              with the same spa-level attention that makes DC Drip feel
+              personal, polished, and safe.
+            </p>
+          </div>
         </div>
       </section>
 
