@@ -145,6 +145,18 @@ const reviews = [
     "Lena S.",
     "Mama Glow saved my postpartum energy. I have not felt this human in years.",
   ],
+  [
+    "Tiffany M.",
+    "The staff made the whole visit feel calm and personal. I came in drained and left feeling restored.",
+  ],
+  [
+    "Andre W.",
+    "Clean space, smooth booking, and the drip helped me bounce back before a packed work week.",
+  ],
+  [
+    "Nia B.",
+    "It feels more like a wellness lounge than a clinic. Comfortable chairs, kind team, and real results.",
+  ],
 ];
 
 function trackEvent(category: string, label: string, url?: string) {
@@ -414,39 +426,18 @@ function StoriesView() {
           </p>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <figure className="overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
-            <img
-              src={clientMomentPhotos[0].src}
-              alt={clientMomentPhotos[0].alt}
-              className="aspect-[16/10] w-full object-cover"
-            />
-            <figcaption className="p-5">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
-                Client energy
-              </p>
-              <h3 className="mt-2 font-display text-3xl font-semibold text-white">
-                {clientMomentPhotos[0].label}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-white/72">
-                {clientMomentPhotos[0].detail}
-              </p>
-            </figcaption>
-          </figure>
-
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
-            {reviews.map(([name, quote]) => (
-              <figure key={name} className="rounded-lg border border-border bg-white p-6 shadow-sm">
-                <div className="text-sm font-black uppercase tracking-[0.14em] text-coral">5/5 stars</div>
-                <blockquote className="mt-4 text-sm leading-7 text-muted-foreground">
-                  "{quote}"
-                </blockquote>
-                <figcaption className="mt-5 font-display text-xl font-semibold text-deep">
-                  {name}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {reviews.map(([name, quote]) => (
+            <figure key={name} className="rounded-lg border border-border bg-white p-6 shadow-sm">
+              <div className="text-sm font-black uppercase tracking-[0.14em] text-coral">5/5 stars</div>
+              <blockquote className="mt-4 text-sm leading-7 text-muted-foreground">
+                "{quote}"
+              </blockquote>
+              <figcaption className="mt-5 font-display text-xl font-semibold text-deep">
+                {name}
+              </figcaption>
+            </figure>
+          ))}
         </div>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
