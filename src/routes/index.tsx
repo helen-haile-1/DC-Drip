@@ -315,11 +315,6 @@ function ServicesView() {
                 menu helps guests match how they feel today to the protocol that
                 helps them leave better.
               </p>
-              <img
-                src={clientMomentPhotos[1].src}
-                alt={clientMomentPhotos[1].alt}
-                className="max-h-60 w-full rounded-md border border-white/12 object-cover object-center"
-              />
             </div>
           </div>
         </div>
