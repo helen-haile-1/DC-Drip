@@ -92,6 +92,16 @@ const galleryPhotos = [
     alt: "DC Drip client beside the brand wall",
     label: "Brand wall moment",
   },
+  {
+    src: "/media/client-moments/ai-iv-drip-spa.png",
+    alt: "IV drip in a clean medical spa room",
+    label: "IV drip detail",
+  },
+  {
+    src: "/media/client-moments/ai-nurse-syringes.png",
+    alt: "Black nurse with organized wellness syringes in a medical spa",
+    label: "Wellness prep",
+  },
 ];
 
 const navItems: Array<[View, string]> = [
