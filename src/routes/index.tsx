@@ -56,10 +56,54 @@ const clientMomentPhotos = [
     detail: "Relaxed treatment chairs and the signature DC Drip wall.",
   },
   {
+    src: "/media/client-moments/brand-wall.jpeg",
+    alt: "DC Drip client beside the brand wall",
+    label: "Brand wall moment",
+    detail: "A real client moment beside the signature DC Drip wall.",
+  },
+];
+
+const testimonialVideos = [
+  {
+    src: "/media/client-moments/testimonial-1.mp4",
+    poster: "/media/client-moments/testimonial-1-poster.jpg",
+    label: "Client testimonial",
+    detail: "A guest shares the DC Drip experience in her own words.",
+  },
+  {
+    src: "/media/client-moments/testimonial-2.mp4",
+    poster: "/media/client-moments/testimonial-2-poster.jpg",
+    label: "Lounge testimonial",
+    detail: "A real look at the atmosphere, care, and reset.",
+  },
+  {
+    src: "/media/client-moments/testimonial-3.mp4",
+    poster: "/media/client-moments/testimonial-3-poster.jpg",
+    label: "After-drip glow",
+    detail: "A client story from inside the DC Drip lounge.",
+  },
+];
+
+const galleryPhotos = [
+  {
+    src: "/media/client-moments/group-lounge.jpeg",
+    alt: "DC Drip clients gathered in the lounge",
+    label: "Group glow",
+  },
+  {
+    src: "/media/client-moments/drip-chairs.jpeg",
+    alt: "Clients relaxing in DC Drip treatment chairs",
+    label: "Chair-side comfort",
+  },
+  {
     src: "/media/client-moments/lounge-wide.jpeg",
     alt: "DC Drip lounge with clients and treatment chairs",
     label: "Inside the lounge",
-    detail: "A real look at the calm, social side of wellness.",
+  },
+  {
+    src: "/media/client-moments/brand-wall.jpeg",
+    alt: "DC Drip client beside the brand wall",
+    label: "Brand wall moment",
   },
 ];
 
@@ -402,6 +446,45 @@ function StoriesView() {
                 </blockquote>
                 <figcaption className="mt-5 font-display text-xl font-semibold text-deep">
                   {name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {testimonialVideos.map((video) => (
+            <article key={video.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+              <video
+                src={video.src}
+                poster={video.poster}
+                controls
+                playsInline
+                preload="metadata"
+                className="aspect-video w-full bg-deep object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{video.detail}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">
+            Gallery
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {galleryPhotos.map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <figcaption className="p-4 font-display text-xl font-semibold text-deep">
+                  {photo.label}
                 </figcaption>
               </figure>
             ))}
