@@ -2,12 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { recordSocialClick } from "@/lib/social-clicks";
 import clientGlow from "@/assets/client-glow.jpg";
 import dripDetail from "@/assets/drip-detail.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
 import heroIv from "@/assets/hero-iv.jpg";
 import ownerContact from "@/assets/owner-contact.jpg";
 import dcDripLogo from "@/assets/dc-drip-logo.svg";
@@ -42,21 +36,25 @@ const heroBackgroundVideo = "/media/client-moments/marlon.mov";
 const clientMomentVideos = [
   {
     src: "/media/client-moments/marlon.mov",
+    poster: "/media/client-moments/lounge-wide.jpeg",
     label: "The DC Drip reset",
     detail: "A relaxed look inside the lounge experience.",
   },
   {
     src: "/media/client-moments/moment-1.mov",
+    poster: "/media/client-moments/drip-chairs.jpeg",
     label: "Behind the glow",
     detail: "Real visits, real energy, real care.",
   },
   {
     src: "/media/client-moments/moment-2.mov",
+    poster: "/media/client-moments/group-lounge.jpeg",
     label: "Wellness in motion",
     detail: "A glimpse of the DC Drip atmosphere.",
   },
   {
     src: "/media/client-moments/moment-3.mov",
+    poster: "/media/client-moments/brand-wall.jpeg",
     label: "Client moment",
     detail: "The lounge, the team, and the after-drip feeling.",
   },
@@ -116,8 +114,6 @@ const stats = [
   ["9", "Signature blends"],
   ["5-star", "Client rating"],
 ];
-
-const gallery = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6];
 
 const reviews = [
   [
@@ -239,7 +235,7 @@ function HomeView() {
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src={heroBackgroundVideo}
-        poster={heroIv}
+        poster={clientMomentVideos[0].poster}
         autoPlay
         muted
         loop
@@ -328,10 +324,11 @@ function ServicesView() {
           <div className="grid overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-1">
             <video
               src={clientMomentVideos[1].src}
+              poster={clientMomentVideos[1].poster}
               controls
               playsInline
               preload="metadata"
-              className="aspect-video w-full bg-deep object-cover"
+              className="aspect-video max-h-[24rem] w-full bg-deep object-cover"
             />
             <div className="p-6 md:p-8">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
@@ -351,7 +348,7 @@ function ServicesView() {
           <div className="grid gap-4 sm:grid-cols-2">
             {[clientMomentPhotos[1], clientMomentPhotos[2]].map((photo) => (
               <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
-                <img src={photo.src} alt={photo.alt} className="aspect-[4/5] w-full object-cover" />
+                <img src={photo.src} alt={photo.alt} className="aspect-[4/3] w-full object-cover" />
                 <figcaption className="p-4">
                   <h3 className="font-display text-xl font-semibold text-deep">{photo.label}</h3>
                   <p className="mt-1 text-sm leading-6 text-muted-foreground">{photo.detail}</p>
@@ -362,8 +359,8 @@ function ServicesView() {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(([name, tag, desc]) => (
-            <article key={name} className="rounded-3xl border border-border bg-white p-6 shadow-sm">
-              <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-black text-coral">{tag}</span>
+            <article key={name} className="rounded-lg border border-border bg-white p-6 shadow-sm">
+              <span className="rounded-full bg-secondary px-3 py-1 text-xs font-black text-coral">{tag}</span>
               <h3 className="mt-4 font-display text-2xl font-semibold text-deep">{name}</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{desc}</p>
             </article>
@@ -399,7 +396,7 @@ function MembershipView() {
 function StoriesView() {
   return (
     <section id="stories" className="scroll-mt-28 bg-white px-4 py-12 sm:px-6 md:py-18">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl xl:pr-28">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">
@@ -474,10 +471,11 @@ function StoriesView() {
             <div key={video.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
               <video
                 src={video.src}
+                poster={video.poster}
                 controls
                 playsInline
                 preload="metadata"
-                className="aspect-[9/16] w-full bg-deep object-cover sm:aspect-video md:aspect-[9/13]"
+                className="aspect-video w-full bg-deep object-cover"
               />
               <div className="p-4">
                 <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
@@ -487,16 +485,6 @@ function StoriesView() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {gallery.map((src, index) => (
-            <img
-              key={src}
-              src={src}
-              alt={`DC Drip client and lounge photo ${index + 1}`}
-              className="aspect-square w-full rounded-lg border border-border object-cover shadow-sm"
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -520,7 +508,7 @@ function ContactView() {
             <a href={whatsappUrl} onClick={() => trackEvent("floating", "whatsapp", whatsappUrl)} className="rounded-2xl border border-aqua/25 bg-aqua/10 p-5 font-black text-aqua">
               WhatsApp concierge
             </a>
-            <a href={`tel:${phone}`} onClick={() => trackEvent("floating", "call", `tel:${phone}`)} className="rounded-2xl border border-orange-200 bg-orange-50 p-5 font-black text-coral">
+            <a href={`tel:${phone}`} onClick={() => trackEvent("floating", "call", `tel:${phone}`)} className="rounded-2xl border border-aqua/20 bg-secondary p-5 font-black text-coral">
               Call (202) 843-5420
             </a>
           </div>
