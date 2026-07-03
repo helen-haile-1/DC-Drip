@@ -32,10 +32,10 @@ const bookUrl = "https://dc-drip.janeapp.com/";
 const phone = "+12028435420";
 const whatsappUrl =
   "https://wa.me/12028435420?text=Hi%20DC%20Drip%2C%20I%27d%20like%20to%20book%20an%20IV%20session.";
-const heroBackgroundVideo = "/media/client-moments/marlon.mov";
+const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
 const clientMomentVideos = [
   {
-    src: "/media/client-moments/marlon.mov",
+    src: "/media/client-moments/moment-1.mov",
     poster: "/media/client-moments/drip-chairs.jpeg",
     label: "The DC Drip reset",
     detail: "A relaxed look inside the lounge experience.",
@@ -208,15 +208,10 @@ export function Home() {
 function HomeView() {
   return (
     <section id="top" className="relative isolate min-h-[calc(100vh-7.5rem)] scroll-mt-28 overflow-hidden bg-deep text-white">
-      <video
+      <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={heroBackgroundVideo}
-        poster={clientMomentVideos[0].poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
+        src={heroBackgroundImage}
+        alt="DC Drip clients inside the lounge"
       />
       <div className="absolute inset-0 bg-deep/58" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.18_0.06_225/.92)_0%,oklch(0.22_0.07_220/.68)_44%,oklch(0.22_0.07_220/.22)_100%)]" />
