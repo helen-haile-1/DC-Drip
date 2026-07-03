@@ -88,16 +88,6 @@ const galleryPhotos = [
     label: "Group glow",
   },
   {
-    src: "/media/client-moments/drip-chairs.jpeg",
-    alt: "Clients relaxing in DC Drip treatment chairs",
-    label: "Chair-side comfort",
-  },
-  {
-    src: "/media/client-moments/lounge-wide.jpeg",
-    alt: "DC Drip lounge with clients and treatment chairs",
-    label: "Inside the lounge",
-  },
-  {
     src: "/media/client-moments/brand-wall.jpeg",
     alt: "DC Drip client beside the brand wall",
     label: "Brand wall moment",
