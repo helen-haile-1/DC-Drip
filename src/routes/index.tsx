@@ -40,24 +40,6 @@ const clientMomentVideos = [
     label: "The DC Drip reset",
     detail: "A relaxed look inside the lounge experience.",
   },
-  {
-    src: "/media/client-moments/moment-1.mov",
-    poster: "/media/client-moments/drip-chairs.jpeg",
-    label: "Behind the glow",
-    detail: "Real visits, real energy, real care.",
-  },
-  {
-    src: "/media/client-moments/moment-2.mov",
-    poster: "/media/client-moments/group-lounge.jpeg",
-    label: "Wellness in motion",
-    detail: "A glimpse of the DC Drip atmosphere.",
-  },
-  {
-    src: "/media/client-moments/moment-3.mov",
-    poster: "/media/client-moments/brand-wall.jpeg",
-    label: "Client moment",
-    detail: "The lounge, the team, and the after-drip feeling.",
-  },
 ];
 
 const clientMomentPhotos = [
@@ -78,12 +60,6 @@ const clientMomentPhotos = [
     alt: "DC Drip lounge with clients and treatment chairs",
     label: "Inside the lounge",
     detail: "A real look at the calm, social side of wellness.",
-  },
-  {
-    src: "/media/client-moments/brand-wall.jpeg",
-    alt: "DC Drip team member beside the brand wall",
-    label: "Brand wall moment",
-    detail: "A polished glimpse of the DC Drip experience.",
   },
 ];
 
@@ -323,10 +299,11 @@ function ServicesView() {
         <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr]">
           <div className="grid overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-1">
             <video
-              src={clientMomentVideos[1].src}
-              poster={clientMomentVideos[1].poster}
+              src={clientMomentVideos[0].src}
+              poster={clientMomentVideos[0].poster}
               controls
               playsInline
+              muted
               preload="metadata"
               className="aspect-video max-h-[24rem] w-full bg-deep object-cover"
             />
@@ -413,28 +390,24 @@ function StoriesView() {
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="grid gap-4">
-            {[clientMomentPhotos[0], clientMomentPhotos[3]].map((photo) => (
-              <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="aspect-[16/9] w-full object-cover"
-                />
-                <figcaption className="p-5">
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
-                    Client energy
-                  </p>
-                  <h3 className="mt-2 font-display text-3xl font-semibold text-white">
-                    {photo.label}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-white/72">
-                    {photo.detail}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <figure className="overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
+            <img
+              src={clientMomentPhotos[0].src}
+              alt={clientMomentPhotos[0].alt}
+              className="aspect-[16/10] w-full object-cover"
+            />
+            <figcaption className="p-5">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
+                Client energy
+              </p>
+              <h3 className="mt-2 font-display text-3xl font-semibold text-white">
+                {clientMomentPhotos[0].label}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-white/72">
+                {clientMomentPhotos[0].detail}
+              </p>
+            </figcaption>
+          </figure>
 
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
             {reviews.map(([name, quote]) => (
@@ -449,40 +422,6 @@ function StoriesView() {
               </figure>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
-              Video moments
-            </p>
-            <h3 className="mt-2 font-display text-3xl font-light text-deep">
-              Motion, when visitors want more.
-            </h3>
-          </div>
-          <p className="max-w-xl text-sm leading-6 text-muted-foreground">
-            Photos carry the first impression. Videos stay available for people
-            who want to linger and feel the room.
-          </p>
-        </div>
-
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
-          {clientMomentVideos.slice(2).map((video) => (
-            <div key={video.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
-              <video
-                src={video.src}
-                poster={video.poster}
-                controls
-                playsInline
-                preload="metadata"
-                className="aspect-video w-full bg-deep object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
-                <p className="mt-1 text-sm leading-6 text-muted-foreground">{video.detail}</p>
-              </div>
-            </div>
-          ))}
         </div>
 
       </div>
