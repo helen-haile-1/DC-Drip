@@ -65,22 +65,19 @@ const clientMomentPhotos = [
 
 const testimonialVideos = [
   {
-    src: "/media/client-moments/testimonial-1.mp4",
-    poster: "/media/client-moments/testimonial-1-poster.jpg",
-    label: "Client testimonial",
-    detail: "A guest shares the DC Drip experience in her own words.",
+    src: "/videos/ch_one.mp4",
+    label: "Inside the lounge",
+    detail: "One of the original DC Drip testimonial moments.",
   },
   {
-    src: "/media/client-moments/testimonial-2.mp4",
-    poster: "/media/client-moments/testimonial-2-poster.jpg",
-    label: "Lounge testimonial",
-    detail: "A real look at the atmosphere, care, and reset.",
+    src: "/videos/ch_two.mp4",
+    label: "Client experience",
+    detail: "A client shares what the DC Drip reset feels like.",
   },
   {
-    src: "/media/client-moments/testimonial-3.mp4",
-    poster: "/media/client-moments/testimonial-3-poster.jpg",
-    label: "After-drip glow",
-    detail: "A client story from inside the DC Drip lounge.",
+    src: "/videos/ch_three.mp4",
+    label: "Wellness reset",
+    detail: "A real talking testimonial from the DC Drip lounge.",
   },
 ];
 
@@ -457,7 +454,6 @@ function StoriesView() {
             <article key={video.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
               <video
                 src={video.src}
-                poster={video.poster}
                 controls
                 playsInline
                 preload="metadata"
