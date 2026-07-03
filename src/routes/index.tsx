@@ -296,16 +296,17 @@ function ServicesView() {
         <h2 className="mt-4 font-display text-5xl font-light text-deep">
           Nine signature drips. <span className="italic text-aqua">One transformed you.</span>
         </h2>
-        <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr]">
-          <div className="grid overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-1">
+        <div className="mt-8 overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
+          <div className="grid md:grid-cols-[1.08fr_0.92fr]">
             <video
               src={clientMomentVideos[0].src}
               poster={clientMomentVideos[0].poster}
-              controls
               playsInline
               muted
-              preload="metadata"
-              className="aspect-video max-h-[24rem] w-full bg-deep object-cover"
+              autoPlay
+              loop
+              preload="auto"
+              className="aspect-video h-full max-h-[28rem] w-full bg-deep object-cover"
             />
             <div className="p-6 md:p-8">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
@@ -320,18 +321,6 @@ function ServicesView() {
                 helps them leave better.
               </p>
             </div>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[clientMomentPhotos[1], clientMomentPhotos[2]].map((photo) => (
-              <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
-                <img src={photo.src} alt={photo.alt} className="aspect-[4/3] w-full object-cover" />
-                <figcaption className="p-4">
-                  <h3 className="font-display text-xl font-semibold text-deep">{photo.label}</h3>
-                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{photo.detail}</p>
-                </figcaption>
-              </figure>
-            ))}
           </div>
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
