@@ -36,7 +36,7 @@ const heroBackgroundVideo = "/media/client-moments/marlon.mov";
 const clientMomentVideos = [
   {
     src: "/media/client-moments/marlon.mov",
-    poster: "/media/client-moments/lounge-wide.jpeg",
+    poster: "/media/client-moments/drip-chairs.jpeg",
     label: "The DC Drip reset",
     detail: "A relaxed look inside the lounge experience.",
   },
@@ -308,18 +308,23 @@ function ServicesView() {
               preload="auto"
               className="aspect-video h-full max-h-[28rem] w-full bg-deep object-cover"
             />
-            <div className="p-6 md:p-8">
+            <div className="grid gap-5 p-6 md:p-8">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
                 Choose your reset
               </p>
-              <h3 className="mt-3 font-display text-4xl font-light text-white">
+              <h3 className="font-display text-4xl font-light text-white">
                 Every drip starts with a goal.
               </h3>
-              <p className="mt-4 leading-7 text-white/75">
+              <p className="leading-7 text-white/75">
                 Energy, recovery, immunity, detox, glow, or performance. The
                 menu helps guests match how they feel today to the protocol that
                 helps them leave better.
               </p>
+              <img
+                src={clientMomentPhotos[1].src}
+                alt={clientMomentPhotos[1].alt}
+                className="max-h-60 w-full rounded-md border border-white/12 object-cover object-center"
+              />
             </div>
           </div>
         </div>
