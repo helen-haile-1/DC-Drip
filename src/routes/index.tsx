@@ -38,11 +38,55 @@ const bookUrl = "https://dc-drip.janeapp.com/";
 const phone = "+12028435420";
 const whatsappUrl =
   "https://wa.me/12028435420?text=Hi%20DC%20Drip%2C%20I%27d%20like%20to%20book%20an%20IV%20session.";
-const heroBackgroundVideo = "/videos/iv-drip-hero.mp4";
-const storyVideos = [
-  { src: "/videos/ch_one.mp4", label: "Inside the lounge" },
-  { src: "/videos/ch_two.mp4", label: "Client experience" },
-  { src: "/videos/ch_three.mp4", label: "Wellness reset" },
+const heroBackgroundVideo = "/media/client-moments/marlon.mov";
+const clientMomentVideos = [
+  {
+    src: "/media/client-moments/marlon.mov",
+    label: "The DC Drip reset",
+    detail: "A relaxed look inside the lounge experience.",
+  },
+  {
+    src: "/media/client-moments/moment-1.mov",
+    label: "Behind the glow",
+    detail: "Real visits, real energy, real care.",
+  },
+  {
+    src: "/media/client-moments/moment-2.mov",
+    label: "Wellness in motion",
+    detail: "A glimpse of the DC Drip atmosphere.",
+  },
+  {
+    src: "/media/client-moments/moment-3.mov",
+    label: "Client moment",
+    detail: "The lounge, the team, and the after-drip feeling.",
+  },
+];
+
+const clientMomentPhotos = [
+  {
+    src: "/media/client-moments/group-lounge.jpeg",
+    alt: "DC Drip clients gathered in the lounge",
+    label: "Group glow",
+    detail: "Clients in the lounge after a DC Drip wellness session.",
+  },
+  {
+    src: "/media/client-moments/drip-chairs.jpeg",
+    alt: "Clients relaxing in DC Drip treatment chairs",
+    label: "Chair-side comfort",
+    detail: "Relaxed treatment chairs and the signature DC Drip wall.",
+  },
+  {
+    src: "/media/client-moments/lounge-wide.jpeg",
+    alt: "DC Drip lounge with clients and treatment chairs",
+    label: "Inside the lounge",
+    detail: "A real look at the calm, social side of wellness.",
+  },
+  {
+    src: "/media/client-moments/brand-wall.jpeg",
+    alt: "DC Drip team member beside the brand wall",
+    label: "Brand wall moment",
+    detail: "A polished glimpse of the DC Drip experience.",
+  },
 ];
 
 const navItems: Array<[View, string]> = [
@@ -130,7 +174,7 @@ export function Home() {
           </a>
         </nav>
 
-        <div className="flex gap-2 overflow-x-auto border-t border-border px-4 py-2 md:hidden">
+        <div className="flex gap-2 overflow-x-auto border-t border-border px-4 py-2 [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
           {navItems.map(([key, label]) => (
             <a
               key={key}
@@ -191,61 +235,58 @@ export function Home() {
 
 function HomeView() {
   return (
-    <section id="top" className="scroll-mt-28 overflow-hidden bg-white px-4 py-10 sm:px-6 md:py-16">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1fr]">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center md:items-start md:text-left">
-          <span className="w-fit rounded-full border border-aqua/25 bg-aqua/10 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-aqua">
+    <section id="top" className="relative isolate min-h-[calc(100vh-7.5rem)] scroll-mt-28 overflow-hidden bg-deep text-white">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src={heroBackgroundVideo}
+        poster={heroIv}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      />
+      <div className="absolute inset-0 bg-deep/58" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.18_0.06_225/.92)_0%,oklch(0.22_0.07_220/.68)_44%,oklch(0.22_0.07_220/.22)_100%)]" />
+
+      <div className="relative mx-auto flex min-h-[calc(100vh-7.5rem)] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 md:py-20">
+        <div className="max-w-3xl">
+          <span className="inline-flex w-fit border border-white/25 bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-white backdrop-blur">
             Washington DC - Maryland - Virginia
           </span>
-          <h1 className="mt-6 max-w-4xl text-center font-display text-6xl font-light leading-[0.92] text-deep sm:text-7xl lg:text-8xl md:text-left">
+          <h1 aria-label="Hydrate. Heal. Elevate." className="mt-6 max-w-4xl font-display text-6xl font-light leading-[0.92] text-white sm:text-7xl lg:text-8xl">
             Hydrate. <span className="italic text-aqua">Heal.</span>
             <br />
             <span className="font-semibold">Elevate.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-center text-lg leading-8 text-muted-foreground md:text-left">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">
             The DMV's most luxurious IV therapy lounge. Science-backed vitamin
             drips and integrative wellness, delivered in a spa-quiet space
             designed for your comeback.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a href={bookUrl} className="rounded-full bg-coral px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-gold">
               Book Your Session
             </a>
-            <a href="#services" className="rounded-full border border-aqua/25 bg-white px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-aqua shadow-sm">
+            <a href="#services" className="rounded-full border border-white/30 bg-white/12 px-7 py-4 text-sm font-black uppercase tracking-[0.14em] text-white backdrop-blur">
               View Drips
             </a>
           </div>
-          <div className="mt-8 grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="mt-10 grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
             {stats.map(([n, label]) => (
-              <div key={label} className="rounded-2xl border border-border bg-white p-4 shadow-sm">
+              <div key={label} className="border border-white/18 bg-white/10 p-4 backdrop-blur">
                 <div className="font-display text-3xl font-semibold text-aqua">{n}</div>
-                <div className="text-xs text-muted-foreground">{label}</div>
+                <div className="text-xs text-white/70">{label}</div>
               </div>
             ))}
           </div>
         </div>
-
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-aqua/20 via-blue-100 to-orange-100 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-aqua/15 bg-deep shadow-glow">
-            <video
-              className="aspect-[4/3] w-full object-cover opacity-88"
-              src={heroBackgroundVideo}
-              poster={heroIv}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            />
-            <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-white/92 p-4 backdrop-blur">
-              <div className="text-xs font-black uppercase tracking-[0.22em] text-coral">
-                Luxury drip lounge
-              </div>
-              <div className="mt-1 font-display text-2xl font-semibold text-deep">
-                Spa-level comfort, clinically guided care.
-              </div>
-            </div>
+        <div className="mt-10 max-w-md border-l-4 border-aqua bg-white/10 p-5 backdrop-blur">
+          <div className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
+            Luxury drip lounge
+          </div>
+          <div className="mt-2 font-display text-2xl font-semibold text-white">
+            Spa-level comfort, clinically guided care.
           </div>
         </div>
       </div>
@@ -257,7 +298,7 @@ function AboutView() {
   return (
     <section id="about" className="scroll-mt-28 px-4 py-10 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 md:items-center">
-        <img src={clientGlow} alt="Client relaxing during IV therapy" className="h-[24rem] w-full rounded-3xl object-cover shadow-glow" />
+        <img src={clientGlow} alt="Client relaxing during IV therapy" className="h-[24rem] w-full rounded-lg object-cover shadow-glow" />
         <div>
           <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">Our Mission</p>
           <h2 className="mt-4 font-display text-5xl font-light leading-tight text-deep">
@@ -283,6 +324,42 @@ function ServicesView() {
         <h2 className="mt-4 font-display text-5xl font-light text-deep">
           Nine signature drips. <span className="italic text-aqua">One transformed you.</span>
         </h2>
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr]">
+          <div className="grid overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-1">
+            <video
+              src={clientMomentVideos[1].src}
+              controls
+              playsInline
+              preload="metadata"
+              className="aspect-video w-full bg-deep object-cover"
+            />
+            <div className="p-6 md:p-8">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
+                Choose your reset
+              </p>
+              <h3 className="mt-3 font-display text-4xl font-light text-white">
+                Every drip starts with a goal.
+              </h3>
+              <p className="mt-4 leading-7 text-white/75">
+                Energy, recovery, immunity, detox, glow, or performance. The
+                menu helps guests match how they feel today to the protocol that
+                helps them leave better.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[clientMomentPhotos[1], clientMomentPhotos[2]].map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+                <img src={photo.src} alt={photo.alt} className="aspect-[4/5] w-full object-cover" />
+                <figcaption className="p-4">
+                  <h3 className="font-display text-xl font-semibold text-deep">{photo.label}</h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{photo.detail}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(([name, tag, desc]) => (
             <article key={name} className="rounded-3xl border border-border bg-white p-6 shadow-sm">
@@ -300,7 +377,7 @@ function ServicesView() {
 function MembershipView() {
   return (
     <section id="membership" className="scroll-mt-28 px-4 py-10 sm:px-6 md:py-16">
-      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-border bg-deep text-white shadow-glow md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow md:grid-cols-2">
         <img src={dripDetail} alt="IV drip detail" className="h-[24rem] w-full object-cover md:h-full" />
         <div className="p-8 md:p-12">
           <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">DC Drip Premier</p>
@@ -333,28 +410,68 @@ function StoriesView() {
             </h2>
           </div>
           <p className="max-w-lg text-muted-foreground">
-            The videos and photos are back here so the page still feels real,
-            polished, and personal without becoming endless on mobile.
+            Step inside the lounge, hear from real clients, and see the calm,
+            restorative experience that keeps the DMV coming back.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {reviews.map(([name, quote]) => (
-            <figure key={name} className="rounded-3xl border border-border bg-white p-6 shadow-sm">
-              <div className="text-xl text-coral">★★★★★</div>
-              <blockquote className="mt-4 text-sm leading-7 text-muted-foreground">
-                "{quote}"
-              </blockquote>
-              <figcaption className="mt-5 font-display text-xl font-semibold text-deep">
-                {name}
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="grid gap-4">
+            {[clientMomentPhotos[0], clientMomentPhotos[3]].map((photo) => (
+              <figure key={photo.src} className="overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="aspect-[16/9] w-full object-cover"
+                />
+                <figcaption className="p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
+                    Client energy
+                  </p>
+                  <h3 className="mt-2 font-display text-3xl font-semibold text-white">
+                    {photo.label}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-white/72">
+                    {photo.detail}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1">
+            {reviews.map(([name, quote]) => (
+              <figure key={name} className="rounded-lg border border-border bg-white p-6 shadow-sm">
+                <div className="text-sm font-black uppercase tracking-[0.14em] text-coral">5/5 stars</div>
+                <blockquote className="mt-4 text-sm leading-7 text-muted-foreground">
+                  "{quote}"
+                </blockquote>
+                <figcaption className="mt-5 font-display text-xl font-semibold text-deep">
+                  {name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {storyVideos.map((video) => (
-            <div key={video.src} className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+        <div className="mt-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
+              Video moments
+            </p>
+            <h3 className="mt-2 font-display text-3xl font-light text-deep">
+              Motion, when visitors want more.
+            </h3>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-muted-foreground">
+            Photos carry the first impression. Videos stay available for people
+            who want to linger and feel the room.
+          </p>
+        </div>
+
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          {clientMomentVideos.slice(2).map((video) => (
+            <div key={video.src} className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
               <video
                 src={video.src}
                 controls
@@ -362,7 +479,10 @@ function StoriesView() {
                 preload="metadata"
                 className="aspect-[9/16] w-full bg-deep object-cover sm:aspect-video md:aspect-[9/13]"
               />
-              <div className="p-4 text-sm font-black text-deep">{video.label}</div>
+              <div className="p-4">
+                <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">{video.detail}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -373,7 +493,7 @@ function StoriesView() {
               key={src}
               src={src}
               alt={`DC Drip client and lounge photo ${index + 1}`}
-              className="aspect-square w-full rounded-3xl border border-border object-cover shadow-sm"
+              className="aspect-square w-full rounded-lg border border-border object-cover shadow-sm"
             />
           ))}
         </div>
@@ -386,7 +506,7 @@ function ContactView() {
   return (
     <section id="contact" className="scroll-mt-28 px-4 py-10 pb-28 sm:px-6 md:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.85fr_1.15fr] md:items-center">
-        <img src={ownerContact} alt="DC Drip owner" className="h-[30rem] w-full rounded-3xl object-cover object-center shadow-glow" />
+        <img src={ownerContact} alt="DC Drip owner" className="h-[30rem] w-full rounded-lg object-cover object-center shadow-glow" />
         <div>
           <p className="text-xs font-black uppercase tracking-[0.3em] text-aqua">Contact Us</p>
           <h2 className="mt-4 font-display text-5xl font-light leading-tight text-deep">

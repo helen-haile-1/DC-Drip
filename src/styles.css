@@ -34,52 +34,52 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Fraunces", serif;
-  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Manrope", "Segoe UI", sans-serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
 }
 
 :root {
   --radius: 1rem;
   /* Aqua Vitality — clinical teal + warm champagne, high-contrast type */
-  --background: oklch(0.99 0.006 205);
-  --foreground: oklch(0.22 0.055 225);
+  --background: oklch(0.99 0.006 250);
+  --foreground: oklch(0.20 0.07 265);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.06 200);
-  --popover: oklch(0.95 0.025 200);
-  --popover-foreground: oklch(0.22 0.06 200);
-  --primary: oklch(0.58 0.15 210);
-  --primary-foreground: oklch(0.99 0.005 90);
-  --secondary: oklch(0.95 0.035 205);
-  --secondary-foreground: oklch(0.22 0.06 200);
-  --muted: oklch(0.90 0.03 200);
-  --muted-foreground: oklch(0.38 0.05 200);
-  --accent: oklch(0.73 0.18 45);
-  --accent-foreground: oklch(0.22 0.06 200);
+  --card-foreground: oklch(0.20 0.07 265);
+  --popover: oklch(0.96 0.025 255);
+  --popover-foreground: oklch(0.20 0.07 265);
+  --primary: oklch(0.53 0.24 265);
+  --primary-foreground: oklch(0.99 0.006 250);
+  --secondary: oklch(0.94 0.045 255);
+  --secondary-foreground: oklch(0.20 0.07 265);
+  --muted: oklch(0.91 0.035 255);
+  --muted-foreground: oklch(0.40 0.055 260);
+  --accent: oklch(0.70 0.16 245);
+  --accent-foreground: oklch(0.99 0.006 250);
 
   /* Brand tokens */
-  --aqua: oklch(0.62 0.15 205);          /* ocean medical blue */
-  --deep: oklch(0.30 0.08 225);          /* deep navy for ink */
-  --gold: oklch(0.78 0.10 78);           /* soft champagne gold */
-  --amber: oklch(0.72 0.14 65);          /* warm amber */
-  --olive: oklch(0.62 0.09 100);         /* muted golden olive */
-  --coral: oklch(0.70 0.20 38);          /* vibrant orange accent */
+  --aqua: oklch(0.62 0.20 248);          /* clear digital blue */
+  --deep: oklch(0.22 0.10 270);          /* deep blue-violet navy */
+  --gold: oklch(0.80 0.06 250);          /* pale blue highlight */
+  --amber: oklch(0.67 0.15 250);         /* medium service blue */
+  --olive: oklch(0.74 0.10 238);         /* soft sky blue */
+  --coral: oklch(0.56 0.25 265);         /* royal action blue */
 
   --destructive: oklch(0.55 0.24 27);
-  --destructive-foreground: oklch(0.99 0.005 90);
-  --border: oklch(0.32 0.07 205 / 14%);
-  --input: oklch(0.32 0.07 205 / 14%);
-  --ring: oklch(0.55 0.13 200);
+  --destructive-foreground: oklch(0.99 0.006 250);
+  --border: oklch(0.25 0.08 260 / 14%);
+  --input: oklch(0.25 0.08 260 / 14%);
+  --ring: oklch(0.53 0.24 265);
 
   /* Gradients reserved for CTAs, icons, decorative glows */
-  --gradient-hero: linear-gradient(135deg, oklch(0.50 0.16 214) 0%, oklch(0.64 0.15 200) 52%, oklch(0.72 0.20 40) 100%);
-  --gradient-cta: linear-gradient(135deg, oklch(0.60 0.16 205), oklch(0.70 0.20 38));
-  --gradient-aurora: radial-gradient(ellipse at 20% 10%, oklch(0.62 0.13 205 / 0.28), transparent 60%),
-                     radial-gradient(ellipse at 80% 80%, oklch(0.72 0.14 65 / 0.22), transparent 60%),
-                     radial-gradient(ellipse at 50% 100%, oklch(0.78 0.10 78 / 0.20), transparent 60%);
+  --gradient-hero: linear-gradient(135deg, oklch(0.22 0.10 270) 0%, oklch(0.42 0.22 265) 52%, oklch(0.74 0.11 238) 100%);
+  --gradient-cta: linear-gradient(135deg, oklch(0.50 0.24 265), oklch(0.64 0.20 248));
+  --gradient-aurora: radial-gradient(ellipse at 20% 10%, oklch(0.62 0.20 248 / 0.26), transparent 60%),
+                     radial-gradient(ellipse at 80% 80%, oklch(0.72 0.13 238 / 0.22), transparent 60%),
+                     radial-gradient(ellipse at 50% 100%, oklch(0.40 0.19 265 / 0.18), transparent 60%);
   /* Headlines: solid deep teal accent (no rainbow) */
-  --gradient-text: linear-gradient(135deg, oklch(0.32 0.07 205), oklch(0.32 0.07 205));
-  --shadow-glow: 0 24px 70px -24px oklch(0.58 0.15 210 / 0.35);
-  --shadow-gold: 0 20px 55px -20px oklch(0.70 0.20 38 / 0.36);
+  --gradient-text: linear-gradient(135deg, oklch(0.22 0.10 270), oklch(0.22 0.10 270));
+  --shadow-glow: 0 24px 70px -24px oklch(0.50 0.24 265 / 0.35);
+  --shadow-gold: 0 20px 55px -20px oklch(0.56 0.25 265 / 0.36);
 }
 
 @layer base {
@@ -90,8 +90,9 @@
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; color: var(--deep); }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0; color: var(--deep); }
 }
 
 /* Italic emphasis inside headings — warm amber pop, no gradient */
