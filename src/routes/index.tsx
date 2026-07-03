@@ -35,7 +35,7 @@ const whatsappUrl =
 const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
 const clientMomentVideos = [
   {
-    src: "/media/client-moments/moment-1.mov",
+    src: "/media/client-moments/marlon.mov",
     poster: "/media/client-moments/drip-chairs.jpeg",
     label: "The DC Drip reset",
     detail: "A relaxed look inside the lounge experience.",
