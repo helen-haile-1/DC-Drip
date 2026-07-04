@@ -35,15 +35,15 @@ const whatsappUrl =
 const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
 const serviceFeaturePhotos = [
   {
-    src: "/media/client-moments/nurse-original.jpeg",
+    src: "/media/client-moments/nurse-original.webp",
     alt: "DC Drip nurse holding an IV drip with wellness supplies nearby",
   },
   {
-    src: "/media/client-moments/two-men-sitting.jpeg",
+    src: "/media/client-moments/two-men-sitting.webp",
     alt: "Two DC Drip guests relaxing in lounge treatment chairs",
   },
   {
-    src: "/media/client-moments/nurse-edited-generated.png",
+    src: "/media/client-moments/nurse-edited-generated.webp",
     alt: "Nurse with IV drip in a clean wellness clinic setting",
   },
 ];
