@@ -33,12 +33,18 @@ const phone = "+12028435420";
 const whatsappUrl =
   "https://wa.me/12028435420?text=Hi%20DC%20Drip%2C%20I%27d%20like%20to%20book%20an%20IV%20session.";
 const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
-const clientMomentVideos = [
+const serviceFeaturePhotos = [
   {
-    src: "/media/client-moments/marlon.mov",
-    poster: "/media/client-moments/drip-chairs.jpeg",
-    label: "The DC Drip reset",
-    detail: "A relaxed look inside the lounge experience.",
+    src: "/media/client-moments/nurse-original.jpeg",
+    alt: "DC Drip nurse holding an IV drip with wellness supplies nearby",
+  },
+  {
+    src: "/media/client-moments/two-men-sitting.jpeg",
+    alt: "Two DC Drip guests relaxing in lounge treatment chairs",
+  },
+  {
+    src: "/media/client-moments/nurse-edited-generated.png",
+    alt: "Nurse with IV drip in a clean wellness clinic setting",
   },
 ];
 
@@ -346,16 +352,16 @@ function ServicesView() {
         </h2>
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
           <div className="grid md:grid-cols-[1.08fr_0.92fr]">
-            <video
-              src={clientMomentVideos[0].src}
-              poster={clientMomentVideos[0].poster}
-              playsInline
-              muted
-              autoPlay
-              loop
-              preload="auto"
-              className="aspect-video h-full max-h-[28rem] w-full bg-deep object-cover"
-            />
+            <div className="grid h-[28rem] grid-cols-2 grid-rows-2 gap-2 bg-deep p-2">
+              {serviceFeaturePhotos.map((photo, index) => (
+                <img
+                  key={photo.src}
+                  src={photo.src}
+                  alt={photo.alt}
+                  className={`h-full w-full rounded-md object-cover ${index === 0 ? "row-span-2" : ""}`}
+                />
+              ))}
+            </div>
             <div className="grid gap-5 p-6 md:p-8">
               <p className="text-xs font-black uppercase tracking-[0.22em] text-aqua">
                 Choose your reset
