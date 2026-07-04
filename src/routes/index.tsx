@@ -35,10 +35,6 @@ const whatsappUrl =
 const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
 const serviceFeaturePhotos = [
   {
-    src: "/media/client-moments/nurse-original.webp",
-    alt: "DC Drip nurse holding an IV drip with wellness supplies nearby",
-  },
-  {
     src: "/media/client-moments/two-men-sitting.webp",
     alt: "Two DC Drip guests relaxing in lounge treatment chairs",
   },
@@ -352,13 +348,13 @@ function ServicesView() {
         </h2>
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
           <div className="grid md:grid-cols-[1.08fr_0.92fr]">
-            <div className="grid h-[28rem] grid-cols-2 grid-rows-2 gap-2 bg-deep p-2">
-              {serviceFeaturePhotos.map((photo, index) => (
+            <div className="grid h-[28rem] gap-2 bg-deep p-2 sm:grid-cols-2">
+              {serviceFeaturePhotos.map((photo) => (
                 <img
                   key={photo.src}
                   src={photo.src}
                   alt={photo.alt}
-                  className={`h-full w-full rounded-md object-cover ${index === 0 ? "row-span-2" : ""}`}
+                  className="h-full w-full rounded-md object-cover"
                 />
               ))}
             </div>
