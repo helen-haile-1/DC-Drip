@@ -1,0 +1,53 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/reset"
+  to = "/reset/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/reset/"
+  to = "/reset/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/peptides"
+  to = "/peptides/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/peptides/"
+  to = "/peptides/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nad-therapy"
+  to = "/nad-therapy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/nad-therapy/"
+  to = "/nad-therapy/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/weight-loss"
+  to = "/weight-loss/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/weight-loss/"
+  to = "/weight-loss/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/teacher-special"
+  to = "/teacher-special/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/teacher-special/"
+  to = "/teacher-special/index.html"
+  status = 200
