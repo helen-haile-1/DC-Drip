@@ -1,5 +1,5 @@
-/reset /reset/index.html 200!
-/reset/ /reset/index.html 200!
+/reset /dc-reset.html 200!
+/reset/ /dc-reset.html 200!
 /peptides /peptides/index.html 200!
 /peptides/ /peptides/index.html 200!
 /nad-therapy /nad-therapy/index.html 200!
