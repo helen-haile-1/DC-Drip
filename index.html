@@ -1,277 +1,38 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DC Drip Offers | Book IV Therapy, NAD+, Peptides & Weight Loss</title>
-    <meta name="description" content="Book DC Drip hydration, NAD+, peptides, weight loss, and teacher special offers in Washington, DC.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC Drip - Luxury IV Therapy & Wellness in the DMV</title>
+    <meta
+      name="description"
+      content="Premium IV therapy, vitamin shots, and integrative wellness in Washington DC. Hydrate, heal, and elevate at the DMV's most luxurious drip lounge."
+    />
+    <meta property="og:title" content="DC Drip - Luxury IV Therapy & Wellness" />
+    <meta
+      property="og:description"
+      content="Hydrate, heal, and elevate with science-backed IV therapy in the DMV."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.dc-drip.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://www.dc-drip.com/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
     <style>
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: Inter, system-ui, sans-serif;
-        color: #fff;
-        background:
-          radial-gradient(circle at 18% 8%, rgba(4, 217, 255, 0.28), transparent 30%),
-          radial-gradient(circle at 84% 18%, rgba(255, 200, 61, 0.22), transparent 28%),
-          linear-gradient(135deg, #020713 0%, #061b41 52%, #020713 100%);
-        min-height: 100vh;
-      }
-      a { color: inherit; }
-      .page {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-        padding: 26px 0 54px;
-      }
-      .topbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 16px 0 24px;
-      }
-      .brand {
-        font-family: Syne, Inter, sans-serif;
-        font-size: clamp(26px, 5vw, 42px);
-        font-weight: 800;
-        letter-spacing: 0;
-        text-decoration: none;
-      }
-      .brand span { color: #04d9ff; }
-      .call {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        padding: 0 18px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #ffc83d, #04d9ff);
-        color: #061329;
-        font-weight: 900;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .hero {
-        padding: 38px 0 28px;
-      }
-      .eyebrow {
-        display: inline-flex;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #04d9ff, #ffc83d);
-        color: #041024;
-        font-size: 12px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 1.8px;
-      }
-      h1 {
-        max-width: 900px;
-        margin: 18px 0 14px;
-        font-family: Syne, Inter, sans-serif;
-        font-size: clamp(42px, 8vw, 82px);
-        line-height: 0.98;
-        letter-spacing: 0;
-      }
-      .hero p {
-        max-width: 720px;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.86);
-        font-size: clamp(17px, 2.5vw, 21px);
-        line-height: 1.65;
-      }
-      .quick-actions {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin: 28px 0 30px;
-      }
-      .quick-actions a {
-        min-height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 16px;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(4, 217, 255, 0.24);
-        color: #fff;
-        font-weight: 900;
-        text-align: center;
-        text-decoration: none;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-      }
-      .card {
-        min-height: 430px;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        border-radius: 24px;
-        background: #fff;
-        color: #07111f;
-        border: 1px solid rgba(4, 217, 255, 0.26);
-        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-      }
-      .card.featured {
-        grid-column: span 2;
-        min-height: 460px;
-      }
-      .media {
-        min-height: 260px;
-        background: #041024;
-      }
-      .featured .media { min-height: 320px; }
-      .media img {
-        width: 100%;
-        height: 100%;
-        min-height: inherit;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-      }
-      .card-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        padding: 22px;
-      }
-      .tag {
-        width: fit-content;
-        padding: 7px 10px;
-        border-radius: 999px;
-        background: #e9fbff;
-        color: #064663;
-        font-size: 11px;
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      h2 {
-        margin: 13px 0 8px;
-        color: #061329;
-        font-family: Syne, Inter, sans-serif;
-        font-size: clamp(28px, 4vw, 42px);
-        line-height: 1;
-        letter-spacing: 0;
-      }
-      .card p {
-        flex: 1;
-        margin: 0 0 18px;
-        color: #23324a;
-        line-height: 1.55;
-      }
-      .button {
-        min-height: 52px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 14px;
-        background: linear-gradient(135deg, #ffc83d, #04d9ff);
-        color: #061329;
-        font-weight: 900;
-        text-decoration: none;
-      }
-      footer {
-        padding: 32px 0 0;
-        color: rgba(255, 255, 255, 0.76);
-        text-align: center;
-      }
-      footer a {
-        color: #04d9ff;
-        font-weight: 900;
-      }
-      @media (max-width: 800px) {
-        .topbar { align-items: flex-start; flex-direction: column; }
-        .quick-actions { grid-template-columns: 1fr; }
-        .grid { grid-template-columns: 1fr; }
-        .card.featured { grid-column: span 1; }
-        .media, .featured .media { min-height: 250px; }
+      iframe[src*="leadconnectorhq.com"] {
+        bottom: 5.75rem !important;
+        right: 1rem !important;
       }
     </style>
-    <link rel="stylesheet" href="/assets/campaign.css">
   </head>
   <body>
-    <main class="page">
-      <nav class="topbar">
-        <a class="brand" href="/">DC <span>DRIP</span></a>
-        <a class="call" href="tel:+12405121330">Call 240-512-1330</a>
-      </nav>
-
-      <section class="hero">
-        <div class="eyebrow">Washington, DC wellness offers</div>
-        <h1>Choose your drip. Feel better faster.</h1>
-        <p>Hydration, NAD+, peptides, weight-loss support, and limited DC Drip specials in one simple place.</p>
-      </section>
-
-      <section class="quick-actions" aria-label="Quick actions">
-        <a href="/reset">Book the DC Reset</a>
-        <a href="/nad-therapy">Explore NAD+</a>
-        <a href="/weight-loss">Weight Loss Consult</a>
-      </section>
-
-      <section class="grid" aria-label="DC Drip offer links">
-        <article class="card featured">
-          <div class="media"><img src="/assets/reset.jpg" alt="The DC Reset hydration IV offer"></div>
-          <div class="card-body">
-            <span class="tag">Featured IV Offer</span>
-            <h2>The DC Reset</h2>
-            <p>One liter of premium hydration with energy, electrolyte, and immune support. New-patient introduction: $149.</p>
-            <a class="button" href="/reset">View the Reset Offer</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media"><img src="/assets/peptides.jpg" alt="Peptide therapy campaign"></div>
-          <div class="card-body">
-            <span class="tag">Recovery & Performance</span>
-            <h2>Peptides</h2>
-            <p>Clinician-guided peptide protocols for recovery, performance, sleep, body composition, and healthy-aging goals.</p>
-            <a class="button" href="/peptides">Explore Peptides</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media"><img src="/assets/nad.png" alt="NAD+ therapy campaign"></div>
-          <div class="card-body">
-            <span class="tag">Cellular Wellness</span>
-            <h2>NAD+ Therapy</h2>
-            <p>Support energy, focus, anti-aging, and cellular repair with NAD+ therapy options from DC Drip.</p>
-            <a class="button" href="/nad-therapy">Explore NAD+</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media"><img src="/assets/weight-loss.jpg" alt="Weight loss solutions campaign"></div>
-          <div class="card-body">
-            <span class="tag">Clinician Guided</span>
-            <h2>Weight Loss</h2>
-            <p>Medical weight-loss support with consults, GLP-1 options, appetite control, and ongoing wellness guidance.</p>
-            <a class="button" href="/weight-loss">View Weight Loss</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="media"><img src="/assets/teachers.jpg" alt="Teacher special DC Drip campaign"></div>
-          <div class="card-body">
-            <span class="tag">Limited Special</span>
-            <h2>Teacher Special</h2>
-            <p>A special recharge offer for teachers and AFT conference guests visiting Washington, DC.</p>
-            <a class="button" href="/teacher-special">View Teacher Special</a>
-          </div>
-        </article>
-      </section>
-
-      <footer>
-        DC Drip &middot; Washington, DC &middot; <a href="tel:+12405121330">240-512-1330</a> &middot; <a href="https://dc-drip.com">dc-drip.com</a>
-      </footer>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a03a68fb0a57a05caac9458"></script>
   </body>
 </html>
