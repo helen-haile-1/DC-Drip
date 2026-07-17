@@ -38,10 +38,6 @@ const serviceFeaturePhotos = [
     src: "/media/client-moments/two-men-sitting.webp",
     alt: "Two DC Drip guests relaxing in lounge treatment chairs",
   },
-  {
-    src: "/media/client-moments/nurse-edited-generated.webp",
-    alt: "Nurse with IV drip in a clean wellness clinic setting",
-  },
 ];
 
 const clientMomentPhotos = [
@@ -100,8 +96,8 @@ const galleryPhotos = [
     label: "Lounge drip moment",
   },
   {
-    src: "/media/client-moments/ai-nurse-syringes.png",
-    alt: "Black nurse with organized wellness syringes in a medical spa",
+    src: "/media/client-moments/nurse-edited-generated.webp",
+    alt: "Nurse holding an IV drip in a clean wellness clinic setting",
     label: "Wellness prep",
   },
 ];
@@ -348,7 +344,7 @@ function ServicesView() {
         </h2>
         <div className="mt-8 overflow-hidden rounded-lg border border-border bg-deep text-white shadow-glow">
           <div className="grid md:grid-cols-[1.08fr_0.92fr]">
-            <div className="grid h-[28rem] gap-2 bg-deep p-2 sm:grid-cols-2">
+            <div className="grid h-[28rem] gap-2 bg-deep p-2">
               {serviceFeaturePhotos.map((photo) => (
                 <img
                   key={photo.src}
