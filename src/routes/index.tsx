@@ -450,7 +450,7 @@ function StoriesView() {
                 controls
                 playsInline
                 preload="metadata"
-                className="aspect-video w-full bg-deep object-cover"
+                className="aspect-[4/5] w-full bg-deep object-cover object-top"
               />
               <div className="p-4">
                 <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
