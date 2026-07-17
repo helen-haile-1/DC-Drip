@@ -95,9 +95,9 @@ const galleryPhotos = [
     label: "Brand wall moment",
   },
   {
-    src: "/media/client-moments/ai-iv-drip-spa.png",
-    alt: "IV drip in a clean medical spa room",
-    label: "IV drip detail",
+    src: "/media/client-moments/two-women-lounge.jpeg",
+    alt: "Two DC Drip clients relaxing in the IV lounge",
+    label: "Lounge drip moment",
   },
   {
     src: "/media/client-moments/ai-nurse-syringes.png",
