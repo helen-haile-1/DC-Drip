@@ -450,7 +450,7 @@ function StoriesView() {
                 controls
                 playsInline
                 preload="metadata"
-                className="aspect-[4/5] w-full bg-deep object-cover object-top"
+                className="aspect-[9/16] w-full bg-deep object-contain sm:aspect-[4/5] sm:object-cover sm:object-top"
               />
               <div className="p-4">
                 <h3 className="font-display text-xl font-semibold text-deep">{video.label}</h3>
@@ -470,7 +470,7 @@ function StoriesView() {
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="aspect-[4/5] w-full object-cover"
+                  className="aspect-[4/5] w-full bg-slate-50 object-contain sm:object-cover"
                 />
                 <figcaption className="p-4 font-display text-xl font-semibold text-deep">
                   {photo.label}
