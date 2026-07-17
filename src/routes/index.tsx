@@ -32,7 +32,7 @@ const bookUrl = "https://dc-drip.janeapp.com/";
 const phone = "+12028435420";
 const whatsappUrl =
   "https://wa.me/12028435420?text=Hi%20DC%20Drip%2C%20I%27d%20like%20to%20book%20an%20IV%20session.";
-const heroBackgroundImage = "/media/client-moments/lounge-wide.jpeg";
+const heroBackgroundImage = "/media/client-moments/portrait-patient-having-checkup.jpg";
 const serviceFeaturePhotos = [
   {
     src: "/media/client-moments/two-men-sitting.webp",
@@ -85,9 +85,9 @@ const testimonialVideos = [
 
 const galleryPhotos = [
   {
-    src: "/media/client-moments/group-lounge.jpeg",
-    alt: "DC Drip clients gathered in the lounge",
-    label: "Group glow",
+    src: "/media/client-moments/female-student-medicine-wearing-medical-mask.jpg",
+    alt: "Nurse preparing an IV drip in a medical room",
+    label: "IV care",
   },
   {
     src: "/media/client-moments/brand-wall.jpeg",
@@ -266,7 +266,7 @@ function HomeView() {
       <img
         className="absolute inset-0 h-full w-full object-cover"
         src={heroBackgroundImage}
-        alt="DC Drip clients inside the lounge"
+        alt="Patient relaxing during IV therapy"
       />
       <div className="absolute inset-0 bg-deep/58" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,oklch(0.18_0.06_225/.92)_0%,oklch(0.22_0.07_220/.68)_44%,oklch(0.22_0.07_220/.22)_100%)]" />
